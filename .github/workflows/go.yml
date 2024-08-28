@@ -26,3 +26,6 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+    
+    - name: Build Image
+      run: docker build -t localhost/go-init -f ./Containerfile .
