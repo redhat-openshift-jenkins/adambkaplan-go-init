@@ -4,7 +4,7 @@ COPY go.mod go.mod
 COPY main.go main.go
 RUN go build -ldflags="-X 'main.versionString=${GO_INIT_VERSION}'" -o go-init main.go
 
-FROM registry.access.redhat.com/ubi9/ubi-micro:9.4-13
+FROM registry.access.redhat.com/ubi9/ubi-micro:9.4-15
 
 COPY --from=builder /opt/app-root/src/go-init /usr/bin/go-init
 ENTRYPOINT [ "/usr/bin/go-init" ]
