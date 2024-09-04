@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/go-toolset:1.21.11-7.1724661022 as builder
+FROM registry.access.redhat.com/ubi9/go-toolset:1.21.11-9 as builder
 ARG GO_INIT_VERSION="1.0.0"
 COPY go.mod go.mod
 COPY main.go main.go
