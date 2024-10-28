@@ -8,3 +8,11 @@ FROM registry.access.redhat.com/ubi9/ubi-micro:9.4-13
 
 COPY --from=builder /opt/app-root/src/go-init /usr/bin/go-init
 ENTRYPOINT [ "/usr/bin/go-init" ]
+
+LABEL com.redhat.component="ocp-tools-go-init-container" \
+      description="go-init container image" \
+      io.k8s.description="go-init container image" \
+      io.k8s.display-name="go-init" \
+      io.openshift.tags="ci,jenkins,jenkins2" \
+      name="ocp-tools-4/jenkins-go-init" \
+      summary="go-init container image for Jenkins - not intended to be run on OpenShift"
